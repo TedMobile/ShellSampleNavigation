@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             xmlns:viewModels="clr-namespace:ShellSampleNavigation.ViewModels"
+             x:Class="ShellSampleNavigation.Views.PageA"
+             Title="PageA">
+
+    <ContentPage.BindingContext>
+        <viewModels:PageAViewModel />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <Label Margin="20" >
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Welcome to PageA. This page was loaded from Parent Modal page" FontAttributes="Bold" />
+                    <Span Text="{x:Static system:Environment.NewLine}"/>
+                    <Span Text="" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Button Command="{Binding NavigateToPageBCommand}" Text="Go to Page B " Margin="20"/>
+        <Button Command="{Binding BackToRootCommand}" Text="Go Back To Root " Margin="20,0"/>
+    </VerticalStackLayout>
+</ContentPage>

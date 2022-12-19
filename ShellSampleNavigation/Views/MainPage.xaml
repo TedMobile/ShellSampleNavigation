@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ShellSampleNavigation.ViewModels"
+             x:Class="ShellSampleNavigation.Views.MainPage"
+             x:DataType="viewModels:MainPageViewModel"
+             Title="MainPage">
+
+    <ContentPage.BindingContext>
+        <viewModels:MainPageViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Button Text="Go To Second Page"
+                Command="{Binding NavigateToSecondPageCommand}"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" />
+        
+        <Label Text="It will start modal then revert to non modal"></Label>
+        <Button Command="{Binding StartModalNavigationCommand}"
+                Text="Start Modal Navigation" />
+    </VerticalStackLayout>
+</ContentPage>

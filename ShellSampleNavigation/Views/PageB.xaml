@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             xmlns:viewModels="clr-namespace:ShellSampleNavigation.ViewModels"
+             x:Class="ShellSampleNavigation.Views.PageB"
+             Title="PageB">
+
+    <ContentPage.BindingContext>
+        <viewModels:PageBViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout>
+        <Label Margin="20" >
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Welcome to PageB." FontAttributes="Bold" />
+                    <Span Text="{x:Static system:Environment.NewLine}"/>
+                    <Span Text="" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Button Command="{Binding NavigateToPageCCommand}" Text="Go to Page C" Margin="20"/>
+            <Button Command="{Binding BackToRootCommand}" Text="Go Back To Root " Margin="20"/>
+    </VerticalStackLayout>
+</ContentPage>
